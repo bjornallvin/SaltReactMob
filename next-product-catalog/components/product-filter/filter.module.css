@@ -1,0 +1,15 @@
+.filter {
+    padding: 10px;
+    display: flex;
+}
+
+.filter .wrapper {
+    border: 1px solid lightgrey;
+    padding:2px;
+}
+
+.filter select {
+    padding: 10px;
+    margin: 2px;
+    border:none;
+}

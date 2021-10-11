@@ -1,0 +1,23 @@
+.product {
+display:flex;
+    
+}
+.product .leftColumn 
+{
+    padding:20px;
+}
+
+.product .rightColumn {
+    padding: 20px;
+}
+
+.product .productCategory {
+    color: grey;
+    font-style: italic;
+}
+
+.product .productPricing {
+    font-size:30px; 
+    padding-bottom:15px;
+}
+
