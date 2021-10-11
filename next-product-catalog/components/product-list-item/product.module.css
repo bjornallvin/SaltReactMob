@@ -32,3 +32,13 @@
     font-style: italic;
 }
 
+.product .deleteButton {
+    cursor: pointer;
+    color:lightgrey;
+
+}
+.product .deleteButton:hover {
+
+    color:red;
+    
+}

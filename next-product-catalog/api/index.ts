@@ -13,3 +13,13 @@ export const getAllCategories = async (): Promise<string[]> => {
   const categories = await data.json();
   return categories;
 };
+
+export const deleteProduct = async (id: number) => {
+  fetch(process.env.NEXT_PUBLIC_BASE_API + "products/" + id, {
+    method: "DELETE",
+  });
+};
+
+export const addProduct = async (product: IProduct) => {
+  //TODO;
+};

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IProduct } from "../../types";
 import styles from "./product.module.css";
+import { deleteProduct } from "../../api";
 
 export const ProductListItem = ({ product }: { product: IProduct }) => {
   const { id, title, price, image, category } = product;
+  const [shown, setShown] = useState(true);
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(price);
+  if (!shown) return null;
   return (
     <div className={styles.product}>
       <Link href={`/products/${id}`}>
@@ -24,6 +27,15 @@ export const ProductListItem = ({ product }: { product: IProduct }) => {
           </div>
         </a>
       </Link>
+      <div
+        className={styles.deleteButton}
+        onClick={() => {
+          deleteProduct(product.id);
+          setShown(false);
+        }}
+      >
+        X
+      </div>
     </div>
   );
 };
