@@ -23,3 +23,9 @@ export const deleteProduct = async (id: number) => {
 export const addProduct = async (product: IProduct) => {
   //TODO;
 };
+
+export const getProduct = async (id: string): Promise<IProduct> => {
+  const data = await fetch(process.env.NEXT_PUBLIC_BASE_API + "products/" + id);
+  const product = await data.json();
+  return product;
+};

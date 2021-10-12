@@ -4,9 +4,16 @@ import { IProduct } from "../../types";
 import { ProductFilter } from "../product-filter";
 import { ProductListItem } from "../product-list-item";
 
-export const ProductList = () => {
-  const products: IProduct[] = useContext(ProductsContext);
+export const ProductList = ({ products }: { products: IProduct[] }) => {
   const [filter, setFilter] = useState<string>("");
+
+  let prods: IProduct[];
+
+  if (!products) {
+    prods = useContext(ProductsContext);
+  } else {
+    prods = [...products];
+  }
 
   const productFilter = (prod: IProduct) => {
     if (!filter) return true;
@@ -21,7 +28,7 @@ export const ProductList = () => {
           setFilter(category);
         }}
       />
-      {products
+      {prods
         .filter((prod) => productFilter(prod))
         .map((product) => (
           <ProductListItem key={product.id} product={product} />
