@@ -1,0 +1,23 @@
+.wrapper {
+    width: 300px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper input {
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid lightgray;
+}
+
+.wrapper button {
+    width: 100%;
+    padding: 6px 8px;
+    background-color: pink;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0);
+    border: 1px solid lightgray;
+}
