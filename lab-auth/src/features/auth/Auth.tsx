@@ -48,8 +48,21 @@ const Auth = () => {
         onChange={onChange}
         data-testid="password"
       />
+
+      {apiStatus === "loading" && (
+        <div className={styles.ldsroller}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      )}
       <button type="button" onClick={() => dispatch(loginAsync(userInput))}>
-        {apiStatus === "loading" ? "Loading..." : "Login"}
+        Login
       </button>
       {apiStatus === "failed" && <div>Failed to login</div>}
     </div>
